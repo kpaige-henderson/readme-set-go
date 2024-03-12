@@ -1,7 +1,7 @@
 // packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./util/generateMarkdown')
+const generateMarkdown = require('./utils/generateMarkdown')
 
 // questions for user input
 const questions = [
@@ -27,8 +27,8 @@ const questions = [
     },
     {
         type: 'input',
-        message: "Please list your credits:",
-        name: 'credits',
+        message: "Please list your resources:",
+        name: 'crontributing',
     },
     {
         type: 'input',
@@ -65,18 +65,18 @@ const questions = [
 ];
 
 //function to write README file
-function writeToFile(fileName, data) {
-    fs.writeToFile(fileName, data, (err) => {
+function writeFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
         console.log('Loading README..')
     })
 }
 
 //function to initialize app
 function init() {
-    inquirer.createPromptModule(questions)
+    inquirer.prompt(questions)
         .then((response) => {
             var infoInput = generateMarkdown(response)
-            writeToFile('README.md', infoInput)
+            writeFile('./output/README.md', infoInput)
         })
 }
 
