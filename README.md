@@ -18,6 +18,7 @@
 
   ## Usage
   /Users/kendallhenderson/bootcamp/readme-set-go/readme-set-go/output/exampleREADME.md this is the example created using the prompts!
+  and a video walkthrough: https://app.screencastify.com/v3/watch/QHuwuvnGOGJFYLtwvfbx
 
   ## Contributing
   undefined
